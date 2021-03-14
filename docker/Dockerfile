@@ -2,6 +2,8 @@ FROM alpine:latest
 
 WORKDIR /AutoSignMachine/
 
+VOLUME /AutoSignMachine
+
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
 RUN apk add --no-cache tzdata nodejs npm
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
