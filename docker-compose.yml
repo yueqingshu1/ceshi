@@ -13,7 +13,7 @@ services:
     network_mode: "bridge"
     hostname: asm_unicom
     environment:
-      - enable_unicom=true #签到开关 false / true
+      - enable_unicom=true #签到开关 false or true
       - user= # 输入用户手机号
       - password= #输入用户密码
       - appid= #输入手机端APPID
