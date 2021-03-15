@@ -9,7 +9,8 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
  # 复制代码
 COPY . /AutoSignMachine/
 
-RUN NPM install --registry https://registry.npm.taobao.org
+RUN npm config set registry https://registry.npm.taobao.org
+RUN npm install
 
 RUN RM -RF /usr/local/bin/entrypoint.sh
 
