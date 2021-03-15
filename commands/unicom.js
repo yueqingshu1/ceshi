@@ -29,6 +29,11 @@ exports.builder = function (yargs) {
       default: '',
       type: 'string'
     })
+    .option('notify_sctkey', {
+      describe: 'server酱推送',
+      default: '',
+      type: 'string'
+    })
     .help()
     .showHelpOnFail(true, '使用--help查看有效选项')
     .epilog('copyright 2020 LunnLew');
