@@ -6,7 +6,7 @@ services:
       context: ./
       dockerfile: docker/Dockerfile
     volumes:
-      - ./docker/entrypoint.sh:/AutoSignMachine/docker/entrypoint.sh
+      #- ./docker/entrypoint.sh:/AutoSignMachine/docker/entrypoint.sh
       - /root/AutoSignMachine/docker-compose.yml:/AutoSignMachine/docker-compose.yml
     restart: always
     tty: true
