@@ -2,21 +2,20 @@ FROM alpine:latest
 
 WORKDIR /AutoSignMachine/
 
-RUN set -ex \
- && sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories \
- && apk add --no-cache tzdata nodejs npm \
- && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories
+RUN apk add --no-cache tzdata nodejs npm
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
  # 复制代码
- && cp . /AutoSignMachine/ \
+COPY . /AutoSignMachine/
 
- && npm install --registry https://registry.npm.taobao.org \
+RUN NPM install --registry https://registry.npm.taobao.org
 
- && rm -rf /usr/local/bin/entrypoint.sh \
+RUN RM -RF /usr/local/bin/entrypoint.sh
 
- && cp docker/entrypoint.sh /usr/local/bin \
+COPY docker/entrypoint.sh /usr/local/bin
 
- && chmod +x /usr/local/bin/entrypoint.sh
+RUN chmod +x /usr/local/bin/entrypoint.sh
 
 ENTRYPOINT ["entrypoint.sh"]
 CMD ["crond"]
