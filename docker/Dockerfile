@@ -14,7 +14,7 @@ RUN npm install
 
 RUN rm -rf /usr/local/bin/entrypoint.sh
 
-COPY docker/entrypoint.sh /usr/local/bin
+COPY /root/AutoSignMachine/entrypoint.sh /usr/local/bin
 
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
