@@ -12,7 +12,7 @@ COPY . /AutoSignMachine/
 RUN npm config set registry https://registry.npm.taobao.org
 RUN npm install
 
-RUN RM -RF /usr/local/bin/entrypoint.sh
+RUN rm -rf /usr/local/bin/entrypoint.sh
 
 COPY docker/entrypoint.sh /usr/local/bin
 
