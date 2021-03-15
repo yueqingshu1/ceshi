@@ -7,7 +7,7 @@ services:
       dockerfile: docker/Dockerfile
     volumes:
       - /root/AutoSignMachine/entrypoint.sh:/AutoSignMachine/docker/entrypoint.sh
-      - /root/AutoSignMachine/docker-compose.yml:/AutoSignMachine/docker-compose.yml #同步脚本地址
+      - /root/AutoSignMachine/docker-compose.yml:/AutoSignMachine/docker-compose.yml
     restart: always
     tty: true
     network_mode: "bridge"
