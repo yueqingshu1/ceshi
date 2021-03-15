@@ -19,6 +19,7 @@ services:
       - user= # 输入用户手机号
       - password= #输入用户密码
       - appid= #输入手机端APPID
+      - notify_sctkey=
   # asm_bili:
   #   container_name: asm_bili
   #   build:
