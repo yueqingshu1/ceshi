@@ -12,9 +12,6 @@ services:
     tty: true
     network_mode: "bridge"
     hostname: asm_unicom
-    extra_hosts:
-      - "github.com:13.229.188.59"
-      - "raw.githubusercontent.com:151.101.228.133"
     environment:
       - enable_unicom=true #签到开关 false / true
       - user= # 输入用户手机号
