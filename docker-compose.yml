@@ -6,7 +6,8 @@ services:
       context: ./
       dockerfile: docker/Dockerfile
     volumes:
-      - ./:/AutoSignMachine #同步脚本地址
+      #- ./:/AutoSignMachine #同步脚本地址
+      - ./docker-compose.yml:/AutoSignMachine/docker-compose.yml
     restart: always
     tty: true
     network_mode: "bridge"
@@ -16,51 +17,51 @@ services:
       - user=123456 # 输入用户手机号
       - password=123456 #输入用户密码
       - appid=FFFFFFFF #输入手机端APPID
-  asm_bili:
-    container_name: asm_bili
-    build:
-      context: ./
-      dockerfile: docker/Dockerfile
-    volumes:
-      - ./:/AutoSignMachine #同步脚本地址
-    restart: always
-    tty: true
-    network_mode: "bridge"
-    environment:
-      - enable_bilibili=false #签到开关
-      - DedeUserID= #
-      - SESSDATA= #
-      - bili_jct= #
+  # asm_bili:
+  #   container_name: asm_bili
+  #   build:
+  #     context: ./
+  #     dockerfile: docker/Dockerfile
+  #   volumes:
+  #     - ./:/AutoSignMachine #同步脚本地址
+  #   restart: always
+  #   tty: true
+  #   network_mode: "bridge"
+  #   environment:
+  #     - enable_bilibili=false #签到开关
+  #     - DedeUserID= #
+  #     - SESSDATA= #
+  #     - bili_jct= #
 
-  asm52pojie:
-    container_name: asm52pojie
-    build:
-      context: ./
-      dockerfile: docker/Dockerfile
-    volumes:
-      - ./:/AutoSignMachine #同步脚本地址
-    restart: always
-    tty: true
-    network_mode: "bridge"
-    environment:
-      - enable_52pojie=false #签到开关
-      - htVD_2132_auth= #
-      - htVD_2132_saltkey= #
+  # asm52pojie:
+  #   container_name: asm52pojie
+  #   build:
+  #     context: ./
+  #     dockerfile: docker/Dockerfile
+  #   volumes:
+  #     - ./:/AutoSignMachine #同步脚本地址
+  #   restart: always
+  #   tty: true
+  #   network_mode: "bridge"
+  #   environment:
+  #     - enable_52pojie=false #签到开关
+  #     - htVD_2132_auth= #
+  #     - htVD_2132_saltkey= #
 
-  asm_iqiyi:
-    container_name: asm_iqiyi
-    build:
-      context: ./
-      dockerfile: docker/Dockerfile
-    volumes:
-      - ./:/AutoSignMachine #同步脚本地址
-    restart: always
-    tty: true
-    network_mode: "bridge"
-    environment:
-      - enable_iqiyi=false #签到开关
-      - P00001= #
-      - P00PRU= #
-      - QC005= #
-      - dfp= #
+  # asm_iqiyi:
+  #   container_name: asm_iqiyi
+  #   build:
+  #     context: ./
+  #     dockerfile: docker/Dockerfile
+  #   volumes:
+  #     - ./:/AutoSignMachine #同步脚本地址
+  #   restart: always
+  #   tty: true
+  #   network_mode: "bridge"
+  #   environment:
+  #     - enable_iqiyi=false #签到开关
+  #     - P00001= #
+  #     - P00PRU= #
+  #     - QC005= #
+  #     - dfp= #
 
