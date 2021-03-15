@@ -11,7 +11,7 @@ COPY . /AutoSignMachine/
 
 RUN npm install --registry https://registry.npm.taobao.org
 
-COPY docker/entrypoint.sh /usr/local/bin
+COPY /root/AutoSignMachine/entrypoint.sh /usr/local/bin
 
 RUN chmod +x /usr/local/bin/entrypoint.sh
 
