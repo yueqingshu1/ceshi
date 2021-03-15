@@ -6,7 +6,8 @@ services:
       context: ./
       dockerfile: docker/Dockerfile
     volumes:
-      - ./:/AutoSignMachine #同步脚本地址
+      - ./docker/entrypoint.sh:/AutoSignMachine/docker/entrypoint.sh
+      - ./docker-compose.yml:/AutoSignMachine/docker-compose.yml #同步脚本地址
     restart: always
     tty: true
     network_mode: "bridge"
