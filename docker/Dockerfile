@@ -14,10 +14,8 @@ ENV REPO_URL=git@github.com:yueqingshu1/ceshi.git \
 
 WORKDIR /asm-unicom/
 
-RUN apk update
-RUN apk upgrade
-RUN apk add --no-cache tzdata git nodejs moreutils npm curl jq openssh-client
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositoriesRUN 
+RUN apk add --no-cache tzdata git nodejs moreutils npm curl jq openssh-client
 RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 RUN mkdir -p /root/.ssh
 RUN echo -e $KEY > /root/.ssh/id_rsa
