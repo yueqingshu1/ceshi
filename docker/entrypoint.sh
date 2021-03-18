@@ -14,7 +14,7 @@ if [ ${enable_iqiyi} ];then
 fi
 
 if [ ${enable_unicom} ];then #--config /AutoSignMachine/config/mycfg.json"
-  echo "41 */7 * * *       node /AutoSignMachine/index.js unicom --cookies ${cookies} --user ${user} --password ${password} --appid ${appid}" >> /var/spool/cron/crontabs/root
+  echo "*/30 * * * *       node /AutoSignMachine/index.js unicom --cookies ${cookies} --user ${user} --password ${password} --appid ${appid}" >> /var/spool/cron/crontabs/root
 fi
 
 /usr/sbin/crond -S -c /var/spool/cron/crontabs -f -L /dev/stdout
